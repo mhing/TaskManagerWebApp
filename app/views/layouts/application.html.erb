@@ -6,9 +6,20 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-
-<%= yield %>
-
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<a class="brand" href="#">TaskBlaster</a>
+		</div>	
+	</div>
+	<div class="container">
+		<%= yield %>
+	</div>
 </body>
+
+<footer>
+	<em>Created by: Matt Hinger</em>
+</footer>
+
 </html>
