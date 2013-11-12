@@ -1,25 +1,17 @@
-<h1>All Tasks</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="page-header">
+  <h1>Your Tasks</h1>
+</div>
 
 <% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.name %></td>
-    <td><%= task.content %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="task">
+    <strong><%= task.name %></strong>
+    <p><%= task.content %></p>
+  </div>
+  <div class="meta">
+    <%= link_to time_ago_in_words(task.created_at) + ' ago', task %>
+    <span class="admin">
+      | <%= link_to 'Edit', edit_task_path(task) %> |
+      <%= link_to 'Delete', task, method: :delete, data: { confirm: "Are you sure your want to delete this status?"} %>
+    </span>
+  </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Task', new_task_path %>

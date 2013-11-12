@@ -8,18 +8,29 @@
 </head>
 
 <body>
-	<div class="navbar navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-			<a class="brand" href="#">TaskBlaster</a>
-		</div>	
+			<div class="container">
+				<a class="brand" href="#">TaskBlaster</a>
+				<ul class="nav">
+					<li>
+						<%= link_to "Tasks", tasks_path() %>
+					</li>
+				</ul>
+			</div>
+		</div>		
 	</div>
 	<div class="container">
 		<%= yield %>
 	</div>
+	<div class="navbar navbar-inverse navbar-fixed-bottom">
+		<div class="navbar-inner">
+			<div class="container">
+				<p id="footer" class="muted credit">Created by: <a href="#">Matt Hinger</a>
+				</p>
+			</div>
+		</div>
+	</div>
 </body>
-
-<footer>
-	<em>Created by: Matt Hinger</em>
-</footer>
 
 </html>
