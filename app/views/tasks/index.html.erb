@@ -2,16 +2,18 @@
   <h1>Your Tasks</h1>
 </div>
 
+<%= link_to 'Create a New Task',new_task_path, class: "btn btn-success" %>
+
 <% @tasks.each do |task| %>
   <div class="task">
     <strong><%= task.name %></strong>
     <p><%= task.content %></p>
-  </div>
-  <div class="meta">
-    <%= link_to time_ago_in_words(task.created_at) + ' ago', task %>
-    <span class="admin">
-      | <%= link_to 'Edit', edit_task_path(task) %> |
-      <%= link_to 'Delete', task, method: :delete, data: { confirm: "Are you sure your want to delete this status?"} %>
-    </span>
+    <div class="meta">
+      <%= link_to time_ago_in_words(task.created_at) + ' ago', task %>
+      <span class="admin">
+        | <%= link_to 'Edit', edit_task_path(task) %> |
+        <%= link_to 'Delete', task, method: :delete, data: { confirm: "Are you sure your want to delete this status?"} %>
+      </span>
+    </div>
   </div>
 <% end %>

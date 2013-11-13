@@ -10,3 +10,15 @@
 .task p {
 	margin: 4px 0;
 }
+
+.task.hover {
+	background: #FAFAFA;
+}
+
+.task .admin {
+	display: none;
+}
+
+.task.hover .admin {
+	display: inline;
+}
